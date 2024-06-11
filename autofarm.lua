@@ -106,14 +106,27 @@ local function checkReload()
 
     if sets.Text == "0 / 3" and blades == 0 then
         if #workspace.Unclimbable.Reloads:GetChildren() == 0 then
-            for i,v in ipairs(workspace.Unclimbable.Props:GetChildren()) do
+            for i,v in ipairs(workspace.Unclimbable.Props:GetDescendants()) do
                 if #workspace.Unclimbable.Reloads:GetChildren() > 0 then
                     break
                 end
-
+        
                 if v:IsA("MeshPart") or v:IsA("BasePart") then
                     hrp.CFrame = CFrame.new(v.Position.X, v.Position.Y + 500, v.Position.Z)
                     wait(0.2)
+                end
+            end
+        
+            if #workspace.Unclimbable.Reloads:GetChildren() == 0 then
+                for i,v in ipairs(workspace.Unclimbable.Background:GetDescendants()) do
+                    if #workspace.Unclimbable.Reloads:GetChildren() > 0 then
+                        break
+                    end
+        
+                    if v:IsA("MeshPart") or v:IsA("BasePart") then
+                        hrp.CFrame = CFrame.new(v.Position.X, v.Position.Y + 500, v.Position.Z)
+                        wait(0.5)
+                    end
                 end
             end
         end
