@@ -94,6 +94,13 @@ local function clickRetry()
     vim:SendMouseButtonEvent(50, 50, 0, false, game, 0)
 end
 
+task.defer(function()
+    while wait(3) do
+        if #workspace.Titans:GetChildren() == 0 or plr.PlayerGui.Rewards.Visible == true then
+        clickRetry()
+    end
+end)
+
 local function checkReload()
     local sets = plr.PlayerGui.Interface.HUD.Main.Top.Blade.Sets
     local blades = sets.Parent.Inner.Bar.Gradient.Offset.X
@@ -244,7 +251,3 @@ repeat
         killTitan(data.titan)
     end
 until #workspace.Titans:GetChildren() == 0
-
-if #workspace.Titans:GetChildren() == 0 then
-    clickRetry()
-end
