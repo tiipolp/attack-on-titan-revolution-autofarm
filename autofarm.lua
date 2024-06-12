@@ -113,7 +113,7 @@ local function checkReload()
         
                 if v:IsA("MeshPart") or v:IsA("BasePart") then
                     hrp.CFrame = CFrame.new(v.Position.X, v.Position.Y + 500, v.Position.Z)
-                    wait(0.2)
+                    wait(0.5)
                 end
             end
         
