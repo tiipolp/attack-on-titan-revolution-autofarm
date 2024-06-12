@@ -96,11 +96,11 @@ end
 
 task.defer(function()
     while wait(3) do
-        if #workspace.Titans:GetChildren() == 0 or plr.PlayerGui.Rewards.Visible == true then
-        clickRetry()
+        if #workspace.Titans:GetChildren() == 0 or plr.PlayerGui.Interface.Rewards.Visible == true then
+            clickRetry()
+        end
     end
 end)
-
 local function checkReload()
     local sets = plr.PlayerGui.Interface.HUD.Main.Top.Blade.Sets
     local blades = sets.Parent.Inner.Bar.Gradient.Offset.X
