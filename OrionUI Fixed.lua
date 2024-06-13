@@ -23,7 +23,6 @@ local L_6_ = L_5_:GetMouse()
 local L_7_ = game:GetService("HttpService")
 local L_8_ = game:GetService("CoreGui")
 local L_9_ = game:GetService("Debris")
-_G.SLIDERINPUTENDED = true
 
 
 if getfenv().getconnections then
@@ -1660,7 +1659,7 @@ function L_10_:MakeWindow(L_124_arg1)
 				end)
 				L_179_.InputEnded:Connect(function(L_181_arg1)
 					if L_181_arg1.UserInputType == Enum.UserInputType.MouseButton1 or L_181_arg1.UserInputType == Enum.UserInputType.Touch then
-						_G.SLIDERINPUTENDED = true
+						
 						L_177_ = false
 					end
 				end)
